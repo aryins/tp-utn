@@ -1,25 +1,30 @@
 import {useState} from "react"
-import './Home.css';
+import {Header} from "./components/Header"
+import {Footer} from "./components/Footer"
+import "./Home.css";
 
 const Home = () => {
+
+  
+  const [area, funcionQueActualizaElEstado] = useState("cafe");
+  const cambiarArea = () => {
+    funcionQueActualizaElEstado("cafeteras");
+  }
+  
+  const handleClick = () => {
+    cambiarArea(valorPrevio => valorPrevio === "cafe" ? "cafeteras" : "cafe");
+  }
+
   return (
     <>
+      
+      <Header />
       <h1>Café de la mejor calidad, siempre Caffee</h1>
-      <header className="main-header">
-    <h1>Caffee</h1>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/productos">Productos</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/registro">Registro</a></li>
-      </ul>
-    </nav>
-  </header>
       <section>
         <p>Bienvenidos a Caffee</p>
+        <button onClick={handleClick}>Cambiar área</button>
       </section>
-      <section className="products">
+      <section>
         <h2>Portal de Sensaciones</h2>
       <div className="products-list">
         <div>
@@ -185,9 +190,7 @@ const Home = () => {
 
         </div>
       </section>
-      <footer className="main-footer">
-    <p>© 2026 Caffee - Proyecto de Naara Ariana Ozore para UTN - </p>
-  </footer>
+      <Footer />
     </>
    
   )
