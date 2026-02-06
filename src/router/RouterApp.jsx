@@ -12,7 +12,7 @@ const RouterApp = () => {
       <Routes>
         <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
         <Route path="/quienes-somos" element={<QuienesSomos />} />
-        <Route path="/registro" element={<Registro />} />
+        <Route path="/registrarme" element={<Registro />} />
         <Route path="/login" element={<Login />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>

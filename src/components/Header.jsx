@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
 import { useAuth } from "../context/AuthContext.jsx";
@@ -16,8 +16,9 @@ const { logout, user } = useAuth();
         <li><Link to="/quienes-somos">Quienes Somos</Link></li>
         {!user && <li><Link to="/registrarme">Registrarme</Link></li>}
         <li><Link to="/login">Ingresar</Link></li>
+         {user && <button onClick={() => {logout()}}>cerrar sesión</button>}
       </ul>
-      {user && <button onClick={() => {logout()}}>cerrar sesión</button>}
+     
       
     </nav>
   </header>

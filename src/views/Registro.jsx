@@ -3,7 +3,7 @@ import { Header } from "../components/Header.jsx"
 import "../styles/registro.css"
 import { useAuth } from "../context/AuthContext"
 
-const Register = () => {
+const Registro = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -23,7 +23,7 @@ const Register = () => {
     setError(null)
     setSuccess(null)
     try {
-      await createUserWithEmailAndPassword(auth, formData.email, formData.password)
+      await register(formData.email, formData.password)
       setSuccess("Usuario creado con éxito.")
     } catch (error) {
       setError("Error al crear usuario.")
@@ -66,4 +66,4 @@ const Register = () => {
   )
 }
 
-export { Register }
+export { Registro }
