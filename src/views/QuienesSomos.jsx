@@ -1,6 +1,6 @@
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
-import "../styles/QuienesSomos.css" 
+import "../styles/quienesSomos.css" 
 
 
 const QuienesSomos = () => {
@@ -74,3 +74,4 @@ const QuienesSomos = () => {
 
 
 export { QuienesSomos }
+
