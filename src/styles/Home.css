@@ -27,7 +27,7 @@ section h2 {
   margin-bottom: 1.5rem;
 }
 
- button {
+button {
   background-color: #795548;
   color: #fff;
   border: none;
@@ -41,6 +41,7 @@ section h2 {
  button:hover {
   background-color: #5d4037;
 }
+
 
 /* Lista de productos */
 .products-list {
