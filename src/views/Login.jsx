@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Header } from "../components/Header.jsx"
-import "../styles/Registro.css"
+import "../styles/registro.css"
 import { useAuth } from "../context/AuthContext.jsx"
 
 const Login = () => {

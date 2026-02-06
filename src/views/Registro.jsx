@@ -1,9 +1,7 @@
 import { useState } from "react"
-import { Header } from "../components/Header"
-import "../styles/Registro.css"
-import { useAuth } from "../context/AuthContext.jsx"
-import { createUserWithEmailAndPassword } from "firebase/auth"  
-import { auth } from "../config/firebase.js"
+import { Header } from "../components/Header.jsx"
+import "../styles/registro.css"
+import { useAuth } from "../context/AuthContext"
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +23,7 @@ const Register = () => {
     setError(null)
     setSuccess(null)
     try {
-      await register(formData.email, formData.password)
+      await createUserWithEmailAndPassword(auth, formData.email, formData.password)
       setSuccess("Usuario creado con éxito.")
     } catch (error) {
       setError("Error al crear usuario.")
