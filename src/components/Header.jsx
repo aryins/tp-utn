@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/Header.css";
+import "../styles/header.css";
 import { useAuth } from "../context/AuthContext.jsx";
 
 
@@ -25,4 +25,5 @@ const { logout, user } = useAuth();
   );
 }
  
+
  export { Header };
