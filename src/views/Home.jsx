@@ -9,7 +9,6 @@ const Home = () => {
   const [editingProduct, setEditingProduct] = useState(null)
   const [formData, setFormData] = useState({
     name: "",
-    price: "",
     category: "",
     image: "",
     description: ""
@@ -41,7 +40,6 @@ const Home = () => {
     } else {
       const addedProduct = await addNewProductFirebase({
         name: formData.name,
-        price: Number(formData.price),
         category: formData.category,
         image: formData.image,
         description: formData.description
@@ -51,7 +49,6 @@ const Home = () => {
 
     setFormData({
       name: "",
-      price: "",
       category: "",
       image: "",
       description: ""
@@ -61,7 +58,6 @@ const Home = () => {
   const handleUpdateProduct = (product) => {
     setFormData({
       name: product.name,
-      price: product.price,
       category: product.category,
       image: product.image,
       description: product.description
@@ -71,12 +67,12 @@ const Home = () => {
 
   const handleDeleteProduct = async (id) => {
     try {
-      if (!confirm("¿Estás seguro que deseas borrar el producto?")) {
+      if (!confirm("¿Estás seguro de borrar este café?")) {
         return
       }
 
       const idDeletedProduct = await deleteProductFirebase(id)
-      alert(`Producto id: ${idDeletedProduct} borrado con éxito`)
+      alert(`Producto id: ${idDeletedProduct} derramado con éxito`)
       const filteredProducts = products.filter(p => p.id !== id)
       setProducts(filteredProducts)
     } catch (error) {
@@ -93,7 +89,7 @@ const Home = () => {
         <p>Bienvenidos a Caffee</p>
       </section>
       <section>
-          <h2>Agregar producto</h2>
+          <h2>Crea tu café</h2>
           <form onSubmit={handleSubmit}>
             <input
               name="name"
@@ -101,15 +97,6 @@ const Home = () => {
               placeholder="Titulo"
               required
               value={formData.name}
-              onChange={handleChange}
-            />
-
-            <input
-              name="price"
-              type="number"
-              placeholder="Precio"
-              required
-              value={formData.price}
               onChange={handleChange}
             />
 
@@ -143,17 +130,13 @@ const Home = () => {
           </form>
         </section>
          <section className="products">
-          <h2>Nuestros productos</h2>
+          <h2>Nuestras creaciones</h2>
           <div className="products-list">
             {products.map((product) => (
               <div key={product.id}>
                 <img src={product.image} alt="" />
                 <h4>{product.name}</h4>
                 <p>{product.description}</p>
-                <div className="buy">
-                  <p>{product.price} usd</p>
-                  <button>Comprar</button>
-                </div>
                 <div>
                   <button onClick={() => handleUpdateProduct(product)}>Actualizar</button>
                   <button onClick={() => handleDeleteProduct(product.id)}>Borrar</button>
