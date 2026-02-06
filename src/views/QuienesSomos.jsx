@@ -24,6 +24,8 @@ const QuienesSomos = () => {
                         <li><strong>React:</strong> Biblioteca principal para la interfaz de usuario.</li>
                         <li><strong>React Router:</strong> Manejo de navegación y rutas protegidas.</li>
                         <li><strong>Firebase:</strong> Utilizado para la autenticación de usuarios y almacenamiento de datos.</li>
+                        <li><strong>CSS:</strong> Manejo de estilos.</li>
+                        <li><strong>JavaScript:</strong> Manejo de la lógica de negocio y la comunicación con el servidor..</li>
                     </ul>
 
                     <h3>Estructura del proyecto</h3>
@@ -69,5 +71,6 @@ const QuienesSomos = () => {
         </>
     )
 }
+
 
 export { QuienesSomos }
