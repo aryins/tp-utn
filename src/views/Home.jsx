@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Header } from "../components/Header";
 import "../styles/Home.css";
 import { Footer } from "../components/Footer";
-import { addNewProduct, getAllProducts, deleteProduct, updateProduct } from "../services/api.js";
 import { getAllProducts as getAllProductsFirebase, addNewProduct as addNewProductFirebase, updateProduct as updateProductFirebase, deleteProduct as deleteProductFirebase } from "../services/apiFirebase.js";
 
 const Home = () => {

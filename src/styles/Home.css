@@ -97,6 +97,31 @@ button {
   background-color: #5d4037;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  margin: 20px auto;
+}
+
+form input,
+form textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+form button {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #5d4037;
+
+}
+
+
+
 /* Header */
 .main-header {
   background-color: #4b2e2e; 
